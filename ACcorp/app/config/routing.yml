@@ -1,0 +1,7 @@
+gestor_de_projectes:
+    resource: "@GestorDeProjectesBundle/Resources/config/routing.yml"
+    prefix:   /
+
+app:
+    resource: "@AppBundle/Controller/"
+    type:     annotation

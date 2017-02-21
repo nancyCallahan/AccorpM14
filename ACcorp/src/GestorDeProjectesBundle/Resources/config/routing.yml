@@ -1,0 +1,7 @@
+gestor_de_projectes_homepage:
+    path:     /
+    defaults: { _controller: GestorDeProjectesBundle:Default:index }
+
+registre:
+    path:     /registre
+    defaults: { _controller: GestorDeProjectesBundle:Registration:register }
