@@ -36,25 +36,11 @@ class RegistrationController extends Controller
 
             //return new Response("Usuari registrat");
             $nPila = "Usuari registrat";
-             return $this->render('GestorDeProjectesBundle:Default:sayHello.html.twig',array('nPila' => $nPila));
+            return $this->render('GestorDeProjectesBundle:Default:respostaformUser.html.twig',array('nPila' => $nPila));
         }
 
         return $this->render('GestorDeProjectesBundle:Default:register.html.twig',array('form' => $form->createView()));
     }
     
-    public function  loginAction(Request $request)
-    {
-        $authenticationUtils = $this->get('security.authentication_utils'); //mostra per pantalla si hi ha un error
-
-        // get the login error if there is one
-        $error = $authenticationUtils->getLastAuthenticationError();//recull error
-
-        // last username entered by the user
-        $lastUsername = $authenticationUtils->getLastUsername();//recull l'ultim ususername
-
-        return $this->render('GestorDeProjectesBundle:Default:login.html.twig', array(
-            'last_username' => $lastUsername,
-            'error'         => $error,
-        ));
-    }
+    
 }
