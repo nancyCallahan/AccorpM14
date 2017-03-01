@@ -2,6 +2,9 @@ gestor_de_projectes:
     resource: "@GestorDeProjectesBundle/Resources/config/routing.yml"
     prefix:   /
 
+gestor_de_projectes:
+    resource: "@GestorDeProjectesBundle/Resources/config/routing.yml"
+    prefix:   /logued
 persona:
     resource: "@GestorDeProjectesBundle/Resources/config/routing/persona.yml"
     prefix:   /persona    
@@ -16,7 +19,8 @@ tasca:
 
 tipus:
     resource: "@GestorDeProjectesBundle/Resources/config/routing/tipus.yml"
-    prefix:   /tipus             
+    prefix:   /tipus  
+        
 
 app:
     resource: "@AppBundle/Controller/"

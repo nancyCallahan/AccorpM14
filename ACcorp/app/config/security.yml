@@ -3,10 +3,13 @@
 security:
     encoders:
         GestorDeProjectesBundle\Entity\User: bcrypt
+       
     # http://symfony.com/doc/current/security.html#b-configuring-how-users-are-loaded
     providers:
-        in_memory:
-            memory: ~
+        my_db_provider:
+            entity:
+                class: GestorDeProjectesBundle:User
+                property: username
 
     firewalls:
         # disables authentication for assets and the profiler, adapt it according to your needs
@@ -16,6 +19,31 @@ security:
 
         main:
             anonymous: ~
+            http_basic: ~
+            provider: my_db_provider
+            form_login:
+                login_path: login
+                check_path: login
+                default_target_path: /logued
+            logout:
+                path:   /logout
+                target: /
+
+    access_control:
+       
+        # require ROLE_ADMIN for /persona*
+        - { path: ^/persona, roles: ROLE_ADMIN }
+        # require ROLE_ADMIN for /projecte*
+        - { path: ^/projecte, roles: ROLE_ADMIN }
+        # require ROLE_ADMIN for /tasca*
+        - { path: ^/tasca, roles: ROLE_ADMIN }
+        # require ROLE_ADMIN for /tipus*
+        - { path: ^/tipus, roles: ROLE_ADMIN }
+        
+        - { path: ^/, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+            #logout:
+            #  path: logout
+            #  target: /
             # activate different ways to authenticate
 
             # http_basic: ~
@@ -23,3 +51,12 @@ security:
 
             # form_login: ~
             # http://symfony.com/doc/current/cookbook/security/form_login_setup.html
+
+            #login:
+            #    path:     /login
+            #    defaults: { _controller: MiBundle:User:login }
+ 
+            #login_check:
+            #    path: /login_check
+            #logout:
+            #path: /logout

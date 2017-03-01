@@ -17,14 +17,16 @@
         </thead>
         <tbody>
         {% for projecte in projectes %}
-            <tr>
-                <td><a href="{{ path('projecte_show', { 'id': projecte.id }) }}">{{ projecte.id }}</a></td>
-                <td>{{ projecte.nom }}</td>
-                <td>{{ projecte.descripcioCurta }}</td>
-                <td>{{ projecte.descripcioLlarga }}</td>
-                <td>{{ projecte.entorn }}</td>
-                <td>{{ projecte.imatge }}</td>
-                <td>
+            <div>
+                <div><img  src="{{asset("../web/img/"~projecte.imatge)}}"></div>
+                <div>{{ projecte.nom }}</div>
+                <div>{{ projecte.descripcioCurta }}</div>
+                <div>{{ projecte.entorn }}</div>
+                <div>{{ projecte.descripcioLlarga }}</div>
+            </div>
+
+           
+
                     <ul>
                         <li>
                             <a href="{{ path('projecte_show', { 'id': projecte.id }) }}">show</a>
@@ -45,3 +47,5 @@
         </li>
     </ul>
 {% endblock %}
+
+

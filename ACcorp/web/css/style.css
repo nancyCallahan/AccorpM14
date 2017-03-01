@@ -1,0 +1,21 @@
+body{}
+.cuadrat{position:relative;-webkit-box-shadow: 10px 10px 16px 0px rgba(0,0,0,0.44);
+-moz-box-shadow: 10px 10px 16px 0px rgba(0,0,0,0.44);
+box-shadow: 10px 10px 16px 0px rgba(0,0,0,0.44);border:1px solid grey;height: 350px;border-radius: 4px;}
+.mT15{margin-top: 15px}
+.mB15{margin-bottom: 15px;}
+.w100{width: 100%}
+.pR153{padding-right: 135px;}
+.cont{position: absolute;  top: 50%;  transform: translateY(-50%);}
+.centrarHoritz{margin-left: auto; margin-right: auto;}
+.btn-negre{background-color: black; color:#ffffff;}
+
+.footer {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+  background-color: #efefef;
+  text-align: center;
+}

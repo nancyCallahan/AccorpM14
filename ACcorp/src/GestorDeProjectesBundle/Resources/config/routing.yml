@@ -1,11 +1,23 @@
-gestor_de_projectes_persona:
-    resource: "@GestorDeProjectesBundle/Resources/config/routing/persona.yml"
-    prefix:   /persona
-
 gestor_de_projectes_homepage:
     path:     /
     defaults: { _controller: GestorDeProjectesBundle:Default:index }
 
+login:
+    path:     /login
+    defaults: { _controller: GestorDeProjectesBundle:Default:login }
+
+logout:
+    path: /logout
+
+logued:
+    path:     /logued
+    defaults: { _controller: GestorDeProjectesBundle:Default:logued }
+    
 registre:
     path:     /registre
-    defaults: { _controller: GestorDeProjectesBundle:Registration:register }
+    defaults: { _controller: GestorDeProjectesBundle:Default:registre }
+
+admin:
+    path:     /admin
+    defaults: { _controller: GestorDeProjectesBundle:Default:admin }
+

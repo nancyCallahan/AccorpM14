@@ -27,6 +27,7 @@ class User  implements UserInterface
      * @var string
      *
      * @ORM\Column(name="username", type="string", length=255, unique=true)
+     *@Assert\NotBlank()
      */
     private $username;
 
@@ -40,10 +41,22 @@ class User  implements UserInterface
     /**
      * @var string
      *
+     * @ORM\Column(name="roles", type="json_array")
+     */
+    private $roles = array();
+
+    /**
+     * @var string
+     *
      * @ORM\Column(name="email", type="string", length=255, unique=true)
+     * @Assert\NotBlank()
+     * @Assert\Email()
      */
     private $email;
 
+
+    private $role;
+    
     private $plainPassword;
 
     /**
@@ -128,6 +141,30 @@ class User  implements UserInterface
         return $this->email;
     }
 
+    /**
+     * Get roles
+     *
+     * @return string
+     */
+    public function getRoles()
+    {
+        return $this->roles;
+    }
+
+    /**
+     * Set roles
+     *
+     * @param string $roles
+     *
+     * @return User
+     */
+    public function setRoles(array $roles)
+    {
+        $this->roles = $roles;
+
+        return $this;
+    }
+
     public function getPlainPassword()
     {
         return $this->plainPassword;
@@ -138,6 +175,16 @@ class User  implements UserInterface
         $this->plainPassword = $password;
     }
 
+    public function getRole()
+    {
+        return $this->role;
+    }
+
+    public function setRole($role)
+    {
+        $this->role = $role;
+    }
+
     public function getSalt()
     {
         // The bcrypt algorithm doesn't require a separate salt.
@@ -145,13 +192,13 @@ class User  implements UserInterface
         return null;
     }
 
-    public function getRoles() 
-    { 
-        return array('ROLE_USER'); 
-    } 
+   
     public function eraseCredentials() 
     {
 
     }
-}
 
+
+
+
+}

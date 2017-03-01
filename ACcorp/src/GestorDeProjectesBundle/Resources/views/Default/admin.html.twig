@@ -20,58 +20,35 @@
 
     <title>{% block title %}Gestor de Projectes{% endblock %}</title>
     {% block stylesheets %}
-    	<link href="{{ asset('css/estil.css') }}" rel="stylesheet">
+    	<link href="{{ asset('css/style.css') }}" type="text/css" rel="stylesheet" />
     {% endblock %}
+    {% block javascripts %}{% endblock %}
 </head>
 
 <body>
    <body>
 
-    {% block body %}
-        <div class="container">
+    	{% block header %}
             <div class="row">
                 <div class="col-lg-6 col-lg-offset-3">
+                    <h1 class="pull-right">ACcorp </h1>
                     <img class="pull-right" src="{{asset('../web/img/logo2.png')}}">
                     
                 </div>
             </div>
-            <div class="col-lg-6 col-lg-offset-3 mT15">
-                    
-                <div class="cuadrat">
-                    <form method="POST" action="{{ path('trebConsProj') }}">
-                        
-                    
-                        <div class="col-lg-6 col-lg-offset-3 cont">
-                            <div class=" text-center mT15">
-                                <label>Usuari</label><br>
-                                <input type="text" name="user" class="form-control w100 centrarHoritz" placeholder="usuari">
-                            </div>
-                            <div class=" text-center mT15 mB15">
-                                <label>Contrasenya</label><br>
-                                <input type="password" name="password" class="form-control w100 centrarHoritz" placeholder="contrasenya">
-                            </div>   
-                            <div class=" text-right mT15 mB15 ">
-                            
-                                <input type="submit" name="submit" class="btn btn-negre " value="login">
-                            </div>
-                        </div>
-                    </form> 
-                    <br><br><br><br>
-                    <a href="{{ path('logout') }}">Logout</a>     
-                </div>
-            </div>
-        </div>
+        {% endblock %}
+    	{% block menu %}{% endblock %}
+    	{% block body %}{% endblock %}
         {% block footer %}
-            <div='row'>
-                <div class='footer'>
-                    <i class="fa fa-copyright" aria-hidden="true">Copyright 2017 ACcorp by Alba Casas & Cristina Roigé</i>
-                </div>
+        	<div class='footer'>
+                <i class="fa fa-copyright" aria-hidden="true">Copyright 2017 ACcorp by Alba Casas & Cristina Roigé</i>
             </div>
         {% endblock %}
-    {% endblock %}
+    
 
-    {% block javascripts %}{% endblock %}
+    
 </body>
 </body>
 
 </html>
+
