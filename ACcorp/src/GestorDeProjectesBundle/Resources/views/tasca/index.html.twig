@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Tascas list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Emailpersona</th>
+                <th>Idprojecte</th>
+                <th>Coditipus</th>
+                <th>Descripcio</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for tasca in tascas %}
+            <tr>
+                <td><a href="{{ path('tasca_show', { 'id': tasca.id }) }}">{{ tasca.id }}</a></td>
+                <td>{{ tasca.emailPersona }}</td>
+                <td>{{ tasca.idProjecte }}</td>
+                <td>{{ tasca.codiTipus }}</td>
+                <td>{{ tasca.descripcio }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('tasca_show', { 'id': tasca.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('tasca_edit', { 'id': tasca.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('tasca_new') }}">Create a new tasca</a>
+        </li>
+    </ul>
+{% endblock %}

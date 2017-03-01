@@ -2,6 +2,22 @@ gestor_de_projectes:
     resource: "@GestorDeProjectesBundle/Resources/config/routing.yml"
     prefix:   /
 
+persona:
+    resource: "@GestorDeProjectesBundle/Resources/config/routing/persona.yml"
+    prefix:   /persona    
+
+projecte:
+    resource: "@GestorDeProjectesBundle/Resources/config/routing/projecte.yml"
+    prefix:   /projecte   
+
+tasca:
+    resource: "@GestorDeProjectesBundle/Resources/config/routing/tasca.yml"
+    prefix:   /tasca  
+
+tipus:
+    resource: "@GestorDeProjectesBundle/Resources/config/routing/tipus.yml"
+    prefix:   /tipus             
+
 app:
     resource: "@AppBundle/Controller/"
     type:     annotation

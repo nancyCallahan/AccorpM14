@@ -24,6 +24,13 @@ class Projecte
     /**
      * @var string
      *
+     * @ORM\Column(name="nom", type="string", length=255)
+     */
+    private $nom;
+
+    /**
+     * @var string
+     *
      * @ORM\Column(name="descripcio_curta", type="string", length=255)
      */
     private $descripcioCurta;
@@ -42,6 +49,12 @@ class Projecte
      */
     private $entorn;
 
+     /**
+     * @var string
+     *
+     * @ORM\Column(name="imatge", type="string", length=255)
+     */
+    private $imatge;
 
     /**
      * Get id
@@ -124,5 +137,52 @@ class Projecte
     {
         return $this->entorn;
     }
-}
 
+    /**
+     * Set nom
+     *
+     * @param string $nom
+     *
+     * @return Projecte
+     */
+    public function setNom($nom)
+    {
+        $this->nom = $nom;
+
+        return $this;
+    }
+
+    /**
+     * Get nom
+     *
+     * @return string
+     */
+    public function getNom()
+    {
+        return $this->nom;
+    }
+
+    /**
+     * Set imatge
+     *
+     * @param string $imatge
+     *
+     * @return Projecte
+     */
+    public function setImatge($imatge)
+    {
+        $this->imatge = $imatge;
+
+        return $this;
+    }
+
+    /**
+     * Get imatge
+     *
+     * @return string
+     */
+    public function getImatge()
+    {
+        return $this->imatge;
+    }
+}

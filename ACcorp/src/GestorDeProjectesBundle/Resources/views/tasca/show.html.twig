@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Tasca</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ tasca.id }}</td>
+            </tr>
+            <tr>
+                <th>Emailpersona</th>
+                <td>{{ tasca.emailPersona }}</td>
+            </tr>
+            <tr>
+                <th>Idprojecte</th>
+                <td>{{ tasca.idProjecte }}</td>
+            </tr>
+            <tr>
+                <th>Coditipus</th>
+                <td>{{ tasca.codiTipus }}</td>
+            </tr>
+            <tr>
+                <th>Descripcio</th>
+                <td>{{ tasca.descripcio }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('tasca_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('tasca_edit', { 'id': tasca.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

@@ -1,3 +1,7 @@
+gestor_de_projectes_persona:
+    resource: "@GestorDeProjectesBundle/Resources/config/routing/persona.yml"
+    prefix:   /persona
+
 gestor_de_projectes_homepage:
     path:     /
     defaults: { _controller: GestorDeProjectesBundle:Default:index }

@@ -1,0 +1,24 @@
+tasca_index:
+    path:     /
+    defaults: { _controller: "GestorDeProjectesBundle:Tasca:index" }
+    methods:  GET
+
+tasca_show:
+    path:     /{id}/show
+    defaults: { _controller: "GestorDeProjectesBundle:Tasca:show" }
+    methods:  GET
+
+tasca_new:
+    path:     /new
+    defaults: { _controller: "GestorDeProjectesBundle:Tasca:new" }
+    methods:  [GET, POST]
+
+tasca_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "GestorDeProjectesBundle:Tasca:edit" }
+    methods:  [GET, POST]
+
+tasca_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "GestorDeProjectesBundle:Tasca:delete" }
+    methods:  DELETE
